@@ -9,7 +9,7 @@
 #' @param color2 the color you want all other bars to be
 #'
 #' @return A scale_fill_manual argument to be used inside a ggplot
-#'
+#' @export
 #' @examples
 #' # Example usage
 #' df <- data.frame(

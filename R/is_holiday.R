@@ -3,6 +3,7 @@
 #' Takes in a date and return true if it is a holiday specified by SGH
 #'
 #' @param date Any date (data type must be date)
+#' @export
 #' @returns a TRUE or FALSE if the date provided was a holiday
 
 is_holiday <- function(dates) {
