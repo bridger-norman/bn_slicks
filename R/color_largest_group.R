@@ -1,5 +1,4 @@
 
-
 # Function to color the largest group
 #' Title
 #'
