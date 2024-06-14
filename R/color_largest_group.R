@@ -13,16 +13,16 @@
 #'
 #' @examples
 #' # Example usage
-#' clean_df <- data.frame(
+#' df <- data.frame(
 #'   group = c("A", "B", "C", "D"),
 #'   value = c(10, 20, 5, 15)
 #' )
 #'
-#' # Plot using the function
-#' ggplot(df, aes(x = group, y = value, fill = group)) +
-#'   geom_col() +
+#' ggplot2::ggplot(df, ggplot2::aes(x = group, y = value, fill = group)) +
+#'   ggplot2::geom_col() +
 #'   color_largest_group(df, "group", "value")
 #'
+
 
 
 color_largest_group <- function(df,
@@ -36,9 +36,9 @@ color_largest_group <- function(df,
   group_col <-as.name(group_col)
   num_col <- as.name(num_col)
 
-  largest_group <- df %>%
-    filter((!!num_col) == max((!!num_col))) %>%
-    pull(!!group_col)
+  largest_group <- df |>
+    dplyr::filter((!!num_col) == max((!!num_col))) |>
+    dplyr::pull(!!group_col)
 
   # Create a named vector of colors
   group_levels <- unique(df[[group_col]])
@@ -46,7 +46,7 @@ color_largest_group <- function(df,
   colors[largest_group] <- color1
 
   # Return the custom color scale
-  return(scale_fill_manual(values = colors))
+  return(ggplot2::scale_fill_manual(values = colors))
 }
 
 

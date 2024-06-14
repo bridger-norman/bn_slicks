@@ -31,14 +31,13 @@ Title
 }
 \examples{
 # Example usage
-clean_df <- data.frame(
+df <- data.frame(
   group = c("A", "B", "C", "D"),
   value = c(10, 20, 5, 15)
 )
 
-# Plot using the function
-ggplot(df, aes(x = group, y = value, fill = group)) +
-  geom_col() +
+ggplot2::ggplot(df, ggplot2::aes(x = group, y = value, fill = group)) +
+  ggplot2::geom_col() +
   color_largest_group(df, "group", "value")
 
 }
